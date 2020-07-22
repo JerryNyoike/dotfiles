@@ -1,0 +1,51 @@
+bind o other
+
+# turn off startup message
+startup_message off
+
+# bind win key to be the escape character
+escape Super_L
+
+# use a regular looking cursor
+exec xsetroot -solid black -cursor_name left_ptr
+
+# Use the name of the program rather than the title in the window list
+defwinname name
+
+# bind M-! and M-1 to store the current frame layout in slot #1
+bind M-exclam exec ratpoison -c "setenv fs1 `ratpoison -c 'fdump'`"
+bind M-1 exec ratpoison -c "frestore `ratpoison -c 'getenv fs1'`"
+
+# do the same for M-quotedbl and M-2 and store it in slot 2
+bind M-quotedbl exec ratpoison -c "setenv fs2 `ratpoison -c 'fdump'`"
+bind M-2 exec ratpoison -c "frestore `ratpoison -c 'getenv fs2'`"
+
+# provide another store #3
+bind M-sterling exec ratpoison -c "setenv fs3 `ratpoison -c 'fdump'`"
+bind M-3 exec ratpoison -c "frestore `ratpoison -c 'getenv fs3'`"
+
+# application shortcuts
+bind B exec brave-browser
+bind q exec evince
+
+### screenshot
+definekey top Print exec gnome-screenshot
+
+### restart
+bind Escape restart
+
+# wallpaper and transparency
+exec xcompmgr -c -f -D 5 &
+exec nitrogen --restore
+
+# battery information
+bind percent exec ratpoison -c "echo `acpi`"
+
+# brightnessctl
+definekey top XF86MonBrightnessDown exec xbacklight -dec 10
+definekey top XF86MonBrightnessUp exec xbacklight -inc 12
+
+# volume controls
+definekey top XF86AudioMute exec pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+definekey top XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +10%
+definekey top XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -10%
