@@ -1,0 +1,4 @@
+startup_message off
+
+# disable hardstatus on the terminal to show messages
+hardstatus off
