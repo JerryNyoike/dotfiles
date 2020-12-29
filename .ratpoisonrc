@@ -25,7 +25,7 @@ bind M-sterling exec ratpoison -c "setenv fs3 `ratpoison -c 'fdump'`"
 bind M-3 exec ratpoison -c "frestore `ratpoison -c 'getenv fs3'`"
 
 # application shortcuts
-bind B exec brave-browser
+bind B exec firefox
 bind q exec evince
 
 ### screenshot
@@ -34,8 +34,11 @@ definekey top Print exec gnome-screenshot
 ### restart
 bind Escape restart
 
+### terminal emulator
+bind c exec termite
+
 # wallpaper and transparency
-exec xcompmgr -c -f -D 5 &
+# exec xcompmgr -c -f -D 5 &
 exec nitrogen --restore
 
 # battery information
