@@ -2,3 +2,6 @@ startup_message off
 
 # disable hardstatus on the terminal to show messages
 hardstatus off
+
+# resetting the escape character
+escape ^``
