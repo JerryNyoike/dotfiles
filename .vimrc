@@ -87,6 +87,9 @@ Plug 'itchyny/lightline.vim'
 " vim-gitbranch
 Plug 'https://github.com/itchyny/vim-gitbranch'
 
+" rainbow parentheses
+Plug 'https://github.com/kien/rainbow_parentheses.vim'
+
 call plug#end()
 
 " lightline
@@ -101,3 +104,9 @@ let g:lightline = {
 			\    'gitbranch': 'gitbranch#name'
 			\},
 			\}
+
+" RainbowParens
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
