@@ -4,7 +4,7 @@ bind o other
 startup_message off
 
 # bind win key to be the escape character
-escape C-grave
+escape Super_L
 
 # use a regular looking cursor
 exec xsetroot -solid black -cursor_name left_ptr
