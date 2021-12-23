@@ -97,6 +97,9 @@ Plug 'https://github.com/itchyny/vim-gitbranch'
 " rainbow parentheses
 Plug 'https://github.com/kien/rainbow_parentheses.vim'
 
+" Rust Vim
+Plug 'https://github.com/rust-lang/rust.vim'
+
 call plug#end()
 
 " lightline
@@ -117,3 +120,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 " au Syntax * RainbowParenthesesLoadSquare
 " au Syntax * RainbowParenthesesLoadBraces
+"
+
+syntax enable
+filetype plugin indent on
+
+" Automatic format for rust files
+let g:rustfmt_autosave = 1
